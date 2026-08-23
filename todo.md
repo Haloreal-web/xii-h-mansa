@@ -1,5 +1,10 @@
 # Rencana Pekerjaan Website XII-H
 
+- [x] Mempertahankan hero yang disukai dan menghapus copy tambahan yang tidak diminta setelahnya.
+- [x] Mengganti orbit kartu dan komposisi rumit dengan struktur konten yang lebih bersih.
+- [x] Membangun background 3D interaktif yang terlihat melalui canvas pada tiap bagian utama.
+- [x] Memastikan kartu, galeri, dan karya tidak mengalami overflow atau tumpang tindih pada ponsel.
+- [x] Memvalidasi ulang desktop dan ponsel sebelum membagikan revisi bersih.
 - [x] Mempertahankan hero homepage yang telah disetujui tanpa mengubah komposisi utamanya.
 - [x] Mengganti susunan kartu anggota yang seragam menjadi orbit 3D dengan beberapa ukuran dan kedalaman berbeda.
 - [x] Mengubah galeri serta karya menjadi adegan 3D bertingkat, bukan panel datar.
