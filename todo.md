@@ -1,5 +1,10 @@
 # Rencana Pekerjaan Website XII-H
 
+- [x] Mengubah kartu anggota menjadi grid tiga per baris dengan arah scroll vertikal.
+- [x] Membangun scene anggota bergaya arsip-orbit sebagai background pertama.
+- [x] Membangun scene galeri bergaya ruang foto imersif sebagai background kedua.
+- [x] Membangun scene karya bergaya lab proyek sebagai background ketiga.
+- [x] Menerapkan transisi 3D berbeda antar scene dan memvalidasi pada ponsel.
 - [x] Mempertahankan hero yang disukai dan menghapus copy tambahan yang tidak diminta setelahnya.
 - [x] Mengganti orbit kartu dan komposisi rumit dengan struktur konten yang lebih bersih.
 - [x] Membangun background 3D interaktif yang terlihat melalui canvas pada tiap bagian utama.

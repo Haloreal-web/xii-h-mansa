@@ -12,7 +12,7 @@ const members = Array.from({ length: 26 }, (_, index) => String(index + 1).padSt
 const gallerySlots = ["01", "02", "03", "04", "05"];
 const workSlots = ["01", "02", "03"];
 
-type SpaceMode = "navy" | "ivory" | "gold";
+type SpaceMode = "navy" | "darkroom" | "lab";
 
 function ArrowUpRight() {
   return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" /></svg>;
@@ -31,10 +31,10 @@ function SpaceBackground({ mode = "navy" }: { mode?: SpaceMode }) {
     const context = canvas.getContext("2d");
     if (!context) return;
 
-    const palette = mode === "ivory"
-      ? { particle: "13,42,87", ring: "174,133,48" }
-      : mode === "gold"
-        ? { particle: "246,243,235", ring: "214,174,87" }
+    const palette = mode === "darkroom"
+      ? { particle: "246,243,235", ring: "201,87,102" }
+      : mode === "lab"
+        ? { particle: "13,42,87", ring: "174,133,48" }
         : { particle: "246,243,235", ring: "214,174,87" };
     const particles = Array.from({ length: 78 }, () => ({
       x: Math.random() * 2 - 1,
@@ -73,14 +73,44 @@ function SpaceBackground({ mode = "navy" }: { mode?: SpaceMode }) {
       const originX = width * 0.5;
       const originY = height * 0.5;
 
-      for (let ring = 1; ring <= 3; ring += 1) {
-        const radiusX = width * (0.18 + ring * 0.13);
-        const radiusY = height * (0.07 + ring * 0.05);
-        context.beginPath();
-        context.ellipse(originX + Math.sin(time + ring) * 10, originY + Math.cos(time * 0.7 + ring) * 8, radiusX, radiusY, -0.28 + ring * 0.12, 0, Math.PI * 2);
-        context.strokeStyle = `rgba(${palette.ring}, ${0.09 + ring * 0.025})`;
+      if (mode === "darkroom") {
+        for (let frameIndex = 0; frameIndex < 4; frameIndex += 1) {
+          const size = 90 + frameIndex * 88;
+          context.save();
+          context.translate(originX + Math.sin(time + frameIndex) * 18, originY + Math.cos(time * 0.7 + frameIndex) * 12);
+          context.rotate(-0.13 + frameIndex * 0.085);
+          context.strokeStyle = `rgba(${palette.ring}, ${0.08 + frameIndex * 0.035})`;
+          context.lineWidth = 1;
+          context.strokeRect(-size * 0.65, -size * 0.9, size * 1.3, size * 1.8);
+          context.restore();
+        }
+      } else if (mode === "lab") {
+        const horizon = height * 0.43;
+        context.strokeStyle = `rgba(${palette.ring}, .13)`;
         context.lineWidth = 1;
-        context.stroke();
+        for (let line = -7; line <= 7; line += 1) {
+          context.beginPath();
+          context.moveTo(originX, horizon);
+          context.lineTo(originX + line * width * 0.18, height);
+          context.stroke();
+        }
+        for (let row = 1; row <= 6; row += 1) {
+          const y = horizon + (height - horizon) * Math.pow(row / 6, 1.7);
+          context.beginPath();
+          context.moveTo(0, y);
+          context.lineTo(width, y);
+          context.stroke();
+        }
+      } else {
+        for (let ring = 1; ring <= 3; ring += 1) {
+          const radiusX = width * (0.18 + ring * 0.13);
+          const radiusY = height * (0.07 + ring * 0.05);
+          context.beginPath();
+          context.ellipse(originX + Math.sin(time + ring) * 10, originY + Math.cos(time * 0.7 + ring) * 8, radiusX, radiusY, -0.28 + ring * 0.12, 0, Math.PI * 2);
+          context.strokeStyle = `rgba(${palette.ring}, ${0.09 + ring * 0.025})`;
+          context.lineWidth = 1;
+          context.stroke();
+        }
       }
 
       prisms.forEach((prism, index) => {
@@ -158,6 +188,17 @@ export default function Home() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, []);
 
+  useEffect(() => {
+    const scenes = Array.from(document.querySelectorAll<HTMLElement>(".content-scene"));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    }, { threshold: 0.18 });
+    scenes.forEach((scene) => observer.observe(scene));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="class-site" style={{ "--hero-image": `url(${HERO_IMAGE_URL})` } as CSSProperties}>
       <div className="site-grain" aria-hidden="true" />
@@ -177,9 +218,9 @@ export default function Home() {
 
         <section className="members-section content-scene" id="members" aria-labelledby="members-title"><SpaceBackground /><div className="geometry-layer member-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="members-title">XII-H</h2></div><div className="teacher-card"><span>WALI KELAS</span><div>W</div><button type="button" onClick={() => setSelectedCard("Wali Kelas")} aria-label="Buka kartu wali kelas"><ArrowUpRight /></button></div><div className="member-deck" aria-label="Kartu anggota kelas">{members.map((number, index) => <button className={`member-card card-${index % 4}`} key={number} type="button" onClick={() => setSelectedCard(`Anggota ${number}`)}><span>{number}</span><i /><b>XII-H</b></button>)}</div></section>
 
-        <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><SpaceBackground mode="gold" /><div className="geometry-layer gallery-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-deck">{gallerySlots.map((slot, index) => <button className={`photo-card photo-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>FOTO {slot}</span><i>+</i></button>)}</div></section>
+        <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><SpaceBackground mode="darkroom" /><div className="geometry-layer gallery-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-deck">{gallerySlots.map((slot, index) => <button className={`photo-card photo-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>FOTO {slot}</span><i>+</i></button>)}</div></section>
 
-        <section className="works-section content-scene" id="works" aria-labelledby="works-title"><SpaceBackground mode="ivory" /><div className="geometry-layer work-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="work-deck">{workSlots.map((slot, index) => <button className={`work-card work-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Karya ${slot}`)}><span>KARYA {slot}</span><i /><b>+</b></button>)}</div></section>
+        <section className="works-section content-scene" id="works" aria-labelledby="works-title"><SpaceBackground mode="lab" /><div className="geometry-layer work-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="work-deck">{workSlots.map((slot, index) => <button className={`work-card work-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Karya ${slot}`)}><span>KARYA {slot}</span><i /><b>+</b></button>)}</div></section>
       </main>
 
       <footer className="class-footer" style={{ "--stars-image": `url(${STAR_IMAGE_URL})` } as CSSProperties}><img src={LOGO_URL} alt="Logo elight.universe" /><strong>XII-H || MANSA</strong><span>Part of: @man1nganjuk</span><a href="#top"><ArrowUpRight /></a></footer>
