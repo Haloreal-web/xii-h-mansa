@@ -1,31 +1,35 @@
-# Aethera — Spesifikasi Desain Acuan
+# XII-H || MANSA — Arah Desain
 
-## Acuan yang harus direplikasi
+## Tiga Arah Eksplorasi
 
-Landing page ini adalah pengalaman satu layar yang berpusat pada footage video keemasan dengan tangan yang meraih. Spesifikasi pada `pasted_content.txt` adalah **ground truth**: implementasi tidak akan menambahkan seksi konten, kartu pemasaran, atau ornamen yang mengubah hierarki visual yang telah ditentukan.
+| Theme Name | Very Brief Intro | Probability |
+|---|---|---:|
+| Celestial Yearbook | Buku tahunan digital yang menjadikan orbit, bintang, dan relief kelas sebagai ruang eksplorasi. | 0.07 |
+| Scholarly Signal | Sistem visual akademis dengan panel grafis tegas, stempel, dan tata letak editorial. | 0.04 |
+| Golden Orbit Society | Ruang digital eksklusif bernuansa navy dan emas dengan objek mengambang serta kartu berlapis. | 0.09 |
 
-## Pendekatan Terpilih: Humanist Cinematic Minimalism
+## Pendekatan Terpilih: Celestial Yearbook
 
-**Gerakan desain.** Landing page menggabungkan *cinematic editorial minimalism* dengan bahasa antarmuka *warm glassmorphism*. Kesannya tenang, manusiawi, dan penuh pertimbangan; teknologi menjadi latar bagi empati, bukan sebaliknya.
+**Design Movement.** *Cinematic academic futurism* yang diterjemahkan sebagai buku tahunan digital interaktif: elegan, hangat, dan sedikit kosmik tanpa menjadi neon atau bergaya permainan.
 
-**Prinsip inti.** Pertama, video keemasan adalah pusat komposisi dan teks hanya mendukungnya. Kedua, hierarki dibangun dengan ruang kosong vertikal serta tipografi mono ringan, bukan dengan kartu atau blok dekoratif. Ketiga, semua lapisan UI menggunakan kontras yang terukur agar konten tetap terbaca di atas footage yang berubah. Keempat, motion harus terasa lambat, terarah, dan dapat dimatikan secara penuh oleh preferensi gerak pengguna.
+**Core Principles.** Identitas elight.universe adalah sumber kebenaran visual. Kedalaman dibangun lewat tumpukan orbit, panel kaca, bayangan, dan perspektif CSS, bukan dekorasi acak. Konten anggota belum diisi tidak boleh direkayasa; setiap ruang diperlakukan sebagai komponen yang siap menampung data nyata. Navigasi serta animasi harus terasa terarah, singkat, dan dapat dibaca.
 
-**Filosofi warna.** Near-black bernuansa cokelat menciptakan kedalaman tanpa aura teknologi dingin, ivory memberi kejelasan teks, dan amber menyatu dengan cahaya footage sebagai aksen yang hemat. Nuansa ini menyampaikan kecerdasan yang dekat dan kontemplatif.
+**Color Philosophy.** Navy tua merefleksikan cincin logo dan menciptakan kedalaman, ivory membawa kejelasan editorial, sementara gold menjadi sinyal kebanggaan dan gerak orbit. Emas digunakan hemat agar identitas tetap matang.
 
-**Paradigma tata letak.** Komposisi vertikal sinematik: navigasi melayang di atas, blok pesan berpusat tinggi untuk menyisakan dua pertiga bawah bagi gesture tangan, dan sinyal penilaian kecil dikunci di dasar bingkai. Rel navigasi menjadi satu-satunya elemen struktural horizontal yang dominan.
+**Layout Paradigm.** Halaman bergerak seperti perjalanan lintas orbit: hero sebagai portal kelas, *Class Orbit* sebagai susunan kartu manusia, galeri sebagai bingkai mengambang, lalu karya sebagai platform kreatif. Setiap seksi memakai komposisi berlapis dan arah gerak berbeda, bukan grid sentral seragam.
 
-**Elemen khas.** Kapsul kaca navigasi dengan separator titik mikro, bintang putih yang terpotong pada chip amber persegi, dan scrim berlapis yang menggelapkan pita atas–bawah tanpa menutup cahaya tengah adalah motif yang diulang secara konsisten.
+**Signature Elements.** Orbital rings yang bereaksi terhadap pointer, emblem logo pada cakram kaca, dan kartu navy berujung terpotong dengan garis emas tipis menjadi motif utama.
 
-**Interaksi.** Hover memberikan penguatan paling minimal: warna link meningkat, tombol terdorong dua piksel, dan kontrol merespons dengan cepat. Menu mobile terbuka sebagai lembar gelap transparan yang menjaga fokus dan ruang visual.
+**Interaction Philosophy.** Pointer memberi paralaks kecil terhadap latar dan kartu. Kartu profil memiliki aksi klik yang membuka layer detail, tetapi pada versi awal menampilkan status kesiapan data agar tidak ada identitas siswa yang direka.
 
-**Animasi.** Elemen konten masuk sekali melalui `settle` dengan perpindahan vertikal 20px dan kurva `cubic-bezier(0.22, 1, 0.36, 1)`. Video hanya melakukan fade-in ketika dapat diputar. Saat `prefers-reduced-motion` aktif, animasi masuk dimatikan dan video dibekukan pada frame pertama.
+**Animation.** Kemunculan halaman mengandalkan opacity dan translate ringan, orbit berputar sangat lambat, serta kartu bergerak seperlunya pada hover. Semua gerak non-esensial dinonaktifkan oleh `prefers-reduced-motion`.
 
-**Sistem tipografi.** DM Mono 300 menjadi display tunggal untuk headline demi nuansa presisi dan kelembutan; Hanken Grotesk 400–500 digunakan pada semua teks UI dan isi. Kerning headline rapat dan ukuran navigasi kecil dengan kapital berjarak untuk kesan label editorial.
+**Typography System.** Display memakai `DM Serif Display` untuk rasa buku tahunan dan `Space Grotesk` untuk UI. Judul berkontras tinggi, metadata memakai kapital kecil berjarak, dan isi memakai sans modern yang ringkas.
 
-**Esensi brand.** Aethera adalah AI kolaboratif bagi orang yang ingin berpikir, membuat, dan membangun dengan empati—berbeda melalui ketenangan manusiawi, bukan sensasi teknologi. Kepribadiannya: **kontemplatif, hangat, presisi**.
+**Brand Essence.** XII-H adalah angkatan yang mendokumentasikan perjalanan bersama sebagai konstelasi karya dan karakter; **ambisius, kompak, berkilau**.
 
-**Suara brand.** Headline terdengar hening dan meyakinkan, CTA bersifat mengundang, sedangkan microcopy bersih tanpa jargon. Contoh: “A New Kind of Intelligence” dan “See How It Works.”
+**Brand Voice.** Headline terdengar percaya diri tanpa berlebihan, CTA bersifat eksploratif, dan microcopy jujur tentang konten yang masih dikurasi. Contoh: “We move in one orbit.” dan “Meet the constellation.”
 
-**Wordmark & mark.** Nama Aethera tampil sebagai label huruf kapital kecil dengan tracking lebar, bukan logo generik. Mark pendukung adalah bentuk abstrak dua garis yang mendekat seperti gesture tangan, dalam ivory dengan aksen amber.
+**Wordmark & Logo.** Logo resmi elight.universe digunakan apa adanya sebagai pusat identitas. Wordmark “XII-H || MANSA” dibentuk sebagai baris display serif yang kuat dengan elemen garis orbit sebagai pengikat.
 
-**Warna brand khas.** **Aethera Amber — #e8a33d**, berupa emas hangat yang muncul secara terbatas pada indikator mutu dan aksen cahaya.
+**Signature Brand Color.** **Orbit Gold — #D6AE57**.

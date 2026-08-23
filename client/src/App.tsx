@@ -1,4 +1,4 @@
-/** Aethera visual language: the application shell is intentionally invisible so the first frame owns the experience. */
+/** XII-H visual language: a single immersive class archive with no competing application chrome. */
 import Home from "@/pages/Home";
 
 export default function App() {
