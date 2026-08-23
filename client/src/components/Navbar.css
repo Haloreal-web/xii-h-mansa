@@ -1,0 +1,145 @@
+/** Aethera visual language: translucent navigation acts as a quiet instrument panel over cinematic media. */
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: var(--nav-h);
+}
+
+.nav__brand {
+  flex: 0 0 auto;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.nav__rail {
+  display: flex;
+  align-items: center;
+  margin-inline: auto;
+  padding: 14px 30px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  backdrop-filter: blur(18px) saturate(120%);
+}
+
+.nav__slot {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav__dot {
+  width: 3px;
+  height: 3px;
+  margin-inline: clamp(12px, 1.6vw, 22px);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.nav__rail a {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  font-weight: 400;
+  transition: color 0.3s var(--ease-out);
+}
+
+.nav__rail a:hover {
+  color: var(--ink);
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav__lang,
+.nav__search,
+.nav__toggle {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink-soft);
+  transition: color 0.3s var(--ease-out), transform 0.2s var(--ease-out);
+}
+
+.nav__lang:hover,
+.nav__search:hover,
+.nav__toggle:hover {
+  color: var(--ink);
+}
+
+.nav__lang:active,
+.nav__search:active,
+.nav__toggle:active {
+  transform: scale(0.97);
+}
+
+.nav__lang {
+  gap: 5px;
+  font-size: 14px;
+}
+
+.nav__search {
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.nav__toggle {
+  display: none;
+  margin-left: auto;
+  padding: 8px;
+}
+
+.nav__sheet {
+  display: none;
+}
+
+@media (max-width: 1040px) {
+  .nav__rail,
+  .nav__actions {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: inline-flex;
+  }
+
+  .nav__sheet {
+    display: flex;
+    flex-direction: column;
+    margin: 0 var(--gutter);
+    padding: 10px 20px 20px;
+    border: 1px solid var(--hairline);
+    border-radius: 22px;
+    background: rgba(14, 12, 10, 0.95);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+
+  .nav__sheet a {
+    padding: 14px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    color: var(--ink-soft);
+    font-size: 16px;
+    transition: color 0.3s var(--ease-out);
+  }
+
+  .nav__sheet a:hover {
+    color: var(--ink);
+  }
+
+  .nav__sheet a:last-child {
+    border-bottom: 0;
+  }
+}
