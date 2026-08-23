@@ -1,5 +1,10 @@
 # Rencana Pekerjaan Website XII-H
 
+- [x] Mengubah kartu wali kelas menjadi kartu kotak yang siap diisi foto dan nama.
+- [x] Memastikan grid anggota tiga per baris benar-benar terbaca pada ponsel tanpa potongan.
+- [x] Membangun ulang Galeri sebagai scene foto yang tidak menggunakan kartu anggota atau frame lama.
+- [x] Membangun ulang Karya sebagai scene proyek yang tidak menggunakan kubus lama.
+- [x] Memvalidasi seluruh halaman pada viewport ponsel sebelum membagikan revisi.
 - [x] Mengubah kartu anggota menjadi grid tiga per baris dengan arah scroll vertikal.
 - [x] Membangun scene anggota bergaya arsip-orbit sebagai background pertama.
 - [x] Membangun scene galeri bergaya ruang foto imersif sebagai background kedua.

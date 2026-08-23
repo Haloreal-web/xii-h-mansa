@@ -3,6 +3,7 @@
  */
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import "./ClassSite.css";
+import "./ClassOrbitRefinement.css";
 
 const LOGO_URL = "/manus-storage/xii-h-elight-universe-logo_f5d5207f.png";
 const HERO_IMAGE_URL = "/manus-storage/xii-h-hero-cosmos_df2286c5.jpg";
@@ -12,7 +13,7 @@ const members = Array.from({ length: 26 }, (_, index) => String(index + 1).padSt
 const gallerySlots = ["01", "02", "03", "04", "05"];
 const workSlots = ["01", "02", "03"];
 
-type SpaceMode = "navy" | "darkroom" | "lab";
+type SpaceMode = "navy" | "gallery" | "lab";
 
 function ArrowUpRight() {
   return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" /></svg>;
@@ -31,8 +32,8 @@ function SpaceBackground({ mode = "navy" }: { mode?: SpaceMode }) {
     const context = canvas.getContext("2d");
     if (!context) return;
 
-    const palette = mode === "darkroom"
-      ? { particle: "246,243,235", ring: "201,87,102" }
+    const palette = mode === "gallery"
+      ? { particle: "13,42,87", ring: "174,133,48" }
       : mode === "lab"
         ? { particle: "13,42,87", ring: "174,133,48" }
         : { particle: "246,243,235", ring: "214,174,87" };
@@ -73,7 +74,7 @@ function SpaceBackground({ mode = "navy" }: { mode?: SpaceMode }) {
       const originX = width * 0.5;
       const originY = height * 0.5;
 
-      if (mode === "darkroom") {
+      if (mode === "gallery") {
         for (let frameIndex = 0; frameIndex < 4; frameIndex += 1) {
           const size = 90 + frameIndex * 88;
           context.save();
@@ -216,11 +217,11 @@ export default function Home() {
           <a className="scroll-cue" href="#members"><span>Scroll to meet the class</span><i /></a>
         </section>
 
-        <section className="members-section content-scene" id="members" aria-labelledby="members-title"><SpaceBackground /><div className="geometry-layer member-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="members-title">XII-H</h2></div><div className="teacher-card"><span>WALI KELAS</span><div>W</div><button type="button" onClick={() => setSelectedCard("Wali Kelas")} aria-label="Buka kartu wali kelas"><ArrowUpRight /></button></div><div className="member-deck" aria-label="Kartu anggota kelas">{members.map((number, index) => <button className={`member-card card-${index % 4}`} key={number} type="button" onClick={() => setSelectedCard(`Anggota ${number}`)}><span>{number}</span><i /><b>XII-H</b></button>)}</div></section>
+        <section className="members-section content-scene" id="members" aria-labelledby="members-title"><SpaceBackground /><div className="geometry-layer member-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="members-title">XII-H</h2></div><div className="teacher-card"><span className="teacher-card__label">WALI KELAS</span><div className="teacher-card__portrait">W</div><button type="button" onClick={() => setSelectedCard("Wali Kelas")} aria-label="Buka kartu wali kelas"><ArrowUpRight /></button></div><div className="member-deck" aria-label="Kartu anggota kelas">{members.map((number, index) => <button className={`member-card card-${index % 4}`} key={number} type="button" onClick={() => setSelectedCard(`Anggota ${number}`)}><span>{number}</span><i /><b>XII-H</b></button>)}</div></section>
 
-        <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><SpaceBackground mode="darkroom" /><div className="geometry-layer gallery-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-deck">{gallerySlots.map((slot, index) => <button className={`photo-card photo-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>FOTO {slot}</span><i>+</i></button>)}</div></section>
+        <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><SpaceBackground mode="gallery" /><div className="geometry-layer gallery-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-void">{gallerySlots.map((slot, index) => <button className={`gallery-shard shard-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>{slot}</span><i /></button>)}</div></section>
 
-        <section className="works-section content-scene" id="works" aria-labelledby="works-title"><SpaceBackground mode="lab" /><div className="geometry-layer work-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="work-deck">{workSlots.map((slot, index) => <button className={`work-card work-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Karya ${slot}`)}><span>KARYA {slot}</span><i /><b>+</b></button>)}</div></section>
+        <section className="works-section content-scene" id="works" aria-labelledby="works-title"><SpaceBackground mode="lab" /><div className="geometry-layer work-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="lab-bench">{workSlots.map((slot, index) => <button className={`lab-artifact artifact-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Karya ${slot}`)}><span>{slot}</span><i /><b /></button>)}</div></section>
       </main>
 
       <footer className="class-footer" style={{ "--stars-image": `url(${STAR_IMAGE_URL})` } as CSSProperties}><img src={LOGO_URL} alt="Logo elight.universe" /><strong>XII-H || MANSA</strong><span>Part of: @man1nganjuk</span><a href="#top"><ArrowUpRight /></a></footer>

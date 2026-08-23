@@ -41,3 +41,9 @@ Revisi ini mempertahankan hero sebagai satu-satunya bidang visual yang tidak diu
 Setiap placeholder diperlakukan sebagai **dossier konstelasi XII-H**, bukan kartu generik: memiliki nomor node, tanda orbit, garis Orbit Gold, sudut editorial yang terpotong, dan copy arsip yang jujur tentang data yang masih menunggu. Bahasa objek yang sama—navy, ivory, sudut terpotong, dan garis emas—wajib muncul pada kartu anggota, bingkai galeri, serta kubus karya agar seluruh halaman terbaca sebagai satu antarmuka yang khas.
 
 Untuk revisi berikutnya, tiga area pasca-hero harus dibedakan secara tegas. **Anggota** adalah arsip orbit navy dengan kartu dossier yang tersusun vertikal. **Galeri** adalah ruang foto gelap berperspektif seperti *darkroom*, dengan slide cahaya dan bingkai vertikal yang masuk dari kedalaman. **Karya** adalah laboratorium ivory dengan grid blueprint dan benda kerja yang naik dari lantai. Peralihan antar area menggunakan transformasi 3D berbeda—rotasi orbit, pintu frame, dan lift platform—tanpa mengubah hero yang telah disetujui.
+
+## Style Decisions
+
+- Galeri selalu berupa **kamar fotografi navy gelap** dengan bingkai vertikal berlapis dan off-axis; tidak boleh menjadi baris kartu datar.
+- Karya selalu berupa **laboratorium blueprint ivory** dengan artefak navy–ivory dan Orbit Gold yang berdimensi; tidak boleh memakai panel teal datar.
+- Gold hanya digunakan untuk sinyal prestise: garis orbit, node, bingkai utama, dan sisi artefak.
