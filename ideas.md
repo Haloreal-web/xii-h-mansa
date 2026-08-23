@@ -33,3 +33,9 @@
 **Wordmark & Logo.** Logo resmi elight.universe digunakan apa adanya sebagai pusat identitas. Wordmark “XII-H || MANSA” dibentuk sebagai baris display serif yang kuat dengan elemen garis orbit sebagai pengikat.
 
 **Signature Brand Color.** **Orbit Gold — #D6AE57**.
+
+## Style Decisions
+
+Revisi ini mempertahankan hero sebagai satu-satunya bidang visual yang tidak diubah. Setelah hero, setiap bagian harus berwujud sebagai adegan tiga dimensi: orbit kartu manusia yang dapat diputar, podium wali kelas, tumpukan bingkai galeri dalam perspektif, dan kubus karya yang memiliki sisi. Tampilan ponsel bukan grid desktop yang dipersempit; komposisi ponsel memakai panggung orbit tunggal yang lebih dekat, elemen lebih besar, dan navigasi tahap demi tahap agar kedalaman tetap terbaca.
+
+Setiap placeholder diperlakukan sebagai **dossier konstelasi XII-H**, bukan kartu generik: memiliki nomor node, tanda orbit, garis Orbit Gold, sudut editorial yang terpotong, dan copy arsip yang jujur tentang data yang masih menunggu. Bahasa objek yang sama—navy, ivory, sudut terpotong, dan garis emas—wajib muncul pada kartu anggota, bingkai galeri, serta kubus karya agar seluruh halaman terbaca sebagai satu antarmuka yang khas.
