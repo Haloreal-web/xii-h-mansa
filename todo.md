@@ -1,5 +1,10 @@
 # Rencana Pekerjaan Website XII-H
 
+- [x] Mengubah kartu wali kelas menjadi frame foto persegi panjang dengan area gambar utama.
+- [x] Memindahkan background video/gelap Galeri ke scene Anggota.
+- [x] Mengganti Galeri dengan background Anggota yang lebih ringan.
+- [x] Memperhalus transisi scroll, frame, dan kemunculan scene tanpa menambah beban berat.
+- [x] Memvalidasi pertukaran scene pada desktop dan ponsel.
 - [x] Mengurangi beban animasi canvas dan efek dekoratif pada perangkat mobile.
 - [x] Menunda pemutaran video Galeri hingga bagian Galeri mendekati viewport.
 - [x] Mengubah elemen utama kartu wali kelas menjadi kotak tanpa bentuk lingkaran.
