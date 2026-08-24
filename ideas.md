@@ -47,3 +47,4 @@ Untuk revisi berikutnya, tiga area pasca-hero harus dibedakan secara tegas. **An
 - Galeri selalu berupa **kamar fotografi navy gelap** dengan bingkai vertikal berlapis dan off-axis; tidak boleh menjadi baris kartu datar.
 - Karya selalu berupa **laboratorium blueprint ivory** dengan artefak navy–ivory dan Orbit Gold yang berdimensi; tidak boleh memakai panel teal datar.
 - Gold hanya digunakan untuk sinyal prestise: garis orbit, node, bingkai utama, dan sisi artefak.
+- Setelah Karya, scene penutup masa depan akan berupa **video kenangan kelas dengan suara**. Scene ini belum dibuat sampai aset video serta audio asli tersedia; saat diterapkan, ia harus menjadi pengalaman layar penuh yang sinematik, bukan panel informasi atau duplikasi kontak anggota.

@@ -50,3 +50,10 @@
 - [x] Memeriksa struktur ZIP revisi pengguna sebelum mengganti berkas aktif.
 - [x] Menerapkan revisi pengguna ke proyek dan memulihkan dependensi yang dibutuhkan.
 - [x] Menjalankan serta memvalidasi preview pada desktop dan ponsel.
+
+## Revisi tampilan anggota mobile
+
+- [x] Mengubah grid Anggota pada ponsel menjadi dua kartu per baris dengan area foto lebih besar.
+- [x] Memperkuat kedalaman visual kartu melalui layer, bayangan, dan transformasi ringan yang responsif.
+- [x] Mendokumentasikan scene video kenangan bersuara sebagai rencana penutup setelah Karya tanpa membangunnya sekarang.
+- [x] Memvalidasi komposisi Anggota terbaru pada ponsel dan desktop.

@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import "./ClassSite.css";
 import "./ClassOrbitRefinement.css";
+import "./MemberMobileRefinement.css";
 
 const LOGO_URL = "/manus-storage/xii-h-elight-universe-logo_f5d5207f.png";
 const HERO_IMAGE_URL = "/manus-storage/xii-h-hero-cosmos_df2286c5.jpg";
