@@ -213,7 +213,7 @@ export default function Home() {
       <main>
         <section className="hero-class" id="top" aria-labelledby="hero-title">
           <div className="hero-halo" aria-hidden="true"><i /><i /><i /></div>
-          <div className="hero-copy"><p className="eyebrow"><OrbitMark /> elight.universe presents</p><h1 id="hero-title">XII-H <em>||</em> MANSA</h1><p className="hero-tagline">Lebih baik, dalam satu orbit.</p><p className="hero-note">A digital yearbook-in-progress for the stories, people, and work that shape our final school chapter.</p><div className="hero-actions"><a className="button-gold" href="#members">Explore the class <ArrowUpRight /></a><span>Part of: <b>@man1nganjuk</b></span></div></div>
+          <div className="hero-copy"><p className="eyebrow"><OrbitMark /> elight.universe presents</p><h1 id="hero-title">XII-H <em>||</em> MANSA</h1><p className="hero-tagline">Lebih baik, dalam kebersamaan.</p><p className="hero-note">A digital yearbook-in-progress for the stories, people, and work that shape our final school chapter.</p><div className="hero-actions"><a className="button-gold" href="#members">Explore the class <ArrowUpRight /></a><span>Part of: <b>@man1nganjuk</b></span></div></div>
           <div className="hero-emblem-wrap" aria-hidden="true"><div className="hero-emblem-shadow" /><div className="hero-emblem"><span className="emblem-ring ring-one" /><span className="emblem-ring ring-two" /><span className="emblem-disk"><img src={LOGO_URL} alt="" /></span><span className="emblem-star one">✦</span><span className="emblem-star two">✦</span><span className="emblem-star three">✦</span></div></div>
           <a className="scroll-cue" href="#members"><span>Scroll to meet the class</span><i /></a>
         </section>

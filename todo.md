@@ -1,5 +1,7 @@
 # Rencana Pekerjaan Website XII-H
 
+- [x] Mengganti tagline hero menjadi “Lebih baik, dalam kebersamaan.”
+- [x] Memastikan tagline baru terbaca di desktop dan ponsel.
 - [x] Menyalin dan mendaftarkan video pengguna sebagai aset Galeri.
 - [x] Memasang video sebagai background dengan autoplay, muted, loop, dan playsinline.
 - [x] Menambahkan overlay kontras agar frame Galeri tetap terbaca di atas video.
