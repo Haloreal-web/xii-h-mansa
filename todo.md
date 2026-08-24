@@ -1,5 +1,9 @@
 # Rencana Pekerjaan Website XII-H
 
+- [x] Mengurangi beban animasi canvas dan efek dekoratif pada perangkat mobile.
+- [x] Menunda pemutaran video Galeri hingga bagian Galeri mendekati viewport.
+- [x] Mengubah elemen utama kartu wali kelas menjadi kotak tanpa bentuk lingkaran.
+- [x] Memvalidasi kartu wali kelas dan responsivitas setelah optimasi.
 - [x] Mengganti tagline hero menjadi “Lebih baik, dalam kebersamaan.”
 - [x] Memastikan tagline baru terbaca di desktop dan ponsel.
 - [x] Menyalin dan mendaftarkan video pengguna sebagai aset Galeri.
