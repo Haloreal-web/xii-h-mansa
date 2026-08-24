@@ -1,5 +1,7 @@
 # Rencana Pekerjaan Website XII-H
 
+- [ ] Menyiapkan berkas sumber website yang akan dimasukkan ke arsip ZIP.
+- [ ] Membuat dan memverifikasi arsip ZIP versi website yang dipulihkan.
 - [x] Mengubah kartu wali kelas menjadi frame foto persegi panjang dengan area gambar utama.
 - [x] Memindahkan background video/gelap Galeri ke scene Anggota.
 - [x] Mengganti Galeri dengan background Anggota yang lebih ringan.
@@ -42,3 +44,9 @@
 - [x] Menampilkan tagline “Lebih baik” dan penanda “Part of: @man1nganjuk”.
 - [x] Menyiapkan kerangka kartu anggota, galeri, dan karya tanpa data pribadi fiktif.
 - [x] Memvalidasi versi desktop dan ponsel, lalu membagikan tautan preview.
+
+## Impor revisi pengguna
+
+- [x] Memeriksa struktur ZIP revisi pengguna sebelum mengganti berkas aktif.
+- [x] Menerapkan revisi pengguna ke proyek dan memulihkan dependensi yang dibutuhkan.
+- [x] Menjalankan serta memvalidasi preview pada desktop dan ponsel.
