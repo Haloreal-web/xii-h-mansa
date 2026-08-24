@@ -57,3 +57,10 @@
 - [x] Memperkuat kedalaman visual kartu melalui layer, bayangan, dan transformasi ringan yang responsif.
 - [x] Mendokumentasikan scene video kenangan bersuara sebagai rencana penutup setelah Karya tanpa membangunnya sekarang.
 - [x] Memvalidasi komposisi Anggota terbaru pada ponsel dan desktop.
+
+## Perbaikan regresi mobile
+
+- [x] Mengurangi tinggi kartu Anggota dan mengunci dua kolom yang proporsional.
+- [x] Menghapus layer dan transformasi yang menambah beban render ketika menggulir.
+- [x] Memastikan placeholder foto tetap tajam tanpa efek visual berat.
+- [x] Memvalidasi build, responsivitas, dan performa tampilan setelah perbaikan.

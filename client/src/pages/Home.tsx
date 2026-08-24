@@ -2,6 +2,7 @@
  * XII-H visual language: the approved hero remains intact; content sections use a restrained, real canvas-based 3D starfield.
  */
 import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useIsMobile } from "@/hooks/useMobile";
 import "./ClassSite.css";
 import "./ClassOrbitRefinement.css";
 import "./MemberMobileRefinement.css";
@@ -190,6 +191,7 @@ export default function Home() {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const membersVideoRef = useRef<HTMLVideoElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -240,11 +242,11 @@ export default function Home() {
           <a className="scroll-cue" href="#members"><span>Scroll to meet the class</span><i /></a>
         </section>
 
-        <section className="members-section content-scene" id="members" aria-labelledby="members-title"><video ref={membersVideoRef} className="members-video" muted loop playsInline preload="none" aria-hidden="true"><source src={GALLERY_VIDEO_URL} type="video/mp4" /></video><SpaceBackground mode="gallery" /><div className="geometry-layer member-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="members-title">XII-H</h2></div><div className="teacher-panel"><div className="teacher-photo-frame" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h5l1.3-1.7h3.4L15 5.5h5v13H4v-13Z" stroke="currentColor" strokeWidth="1.2"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" strokeWidth="1.2"/></svg></div><span className="teacher-panel__label">WALI KELAS</span><button type="button" onClick={() => setSelectedCard("Wali Kelas")} aria-label="Buka kartu wali kelas"><ArrowUpRight /></button></div><div className="member-deck" aria-label="Kartu anggota kelas">{members.map((number, index) => <button className={`member-card card-${index % 4}`} key={number} type="button" onClick={() => setSelectedCard(`Anggota ${number}`)}><span>{number}</span><i /><b>XII-H</b></button>)}</div></section>
+        <section className="members-section content-scene" id="members" aria-labelledby="members-title"><video ref={membersVideoRef} className="members-video" muted loop playsInline preload="none" aria-hidden="true"><source src={GALLERY_VIDEO_URL} type="video/mp4" /></video>{!isMobile && <SpaceBackground mode="gallery" />}<div className="geometry-layer member-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="members-title">XII-H</h2></div><div className="teacher-panel"><div className="teacher-photo-frame" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h5l1.3-1.7h3.4L15 5.5h5v13H4v-13Z" stroke="currentColor" strokeWidth="1.2"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" strokeWidth="1.2"/></svg></div><span className="teacher-panel__label">WALI KELAS</span><button type="button" onClick={() => setSelectedCard("Wali Kelas")} aria-label="Buka kartu wali kelas"><ArrowUpRight /></button></div><div className="member-deck" aria-label="Kartu anggota kelas">{members.map((number, index) => <button className={`member-card card-${index % 4}`} key={number} type="button" onClick={() => setSelectedCard(`Anggota ${number}`)}><span>{number}</span><i /><b>XII-H</b></button>)}</div></section>
 
         <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><div className="geometry-layer gallery-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-void">{gallerySlots.map((slot, index) => <button className={`gallery-shard shard-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>{slot}</span><i /></button>)}</div></section>
 
-        <section className="works-section content-scene" id="works" aria-labelledby="works-title"><SpaceBackground mode="lab" /><div className="geometry-layer work-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="lab-bench">{workSlots.map((slot, index) => <button className={`lab-artifact artifact-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Karya ${slot}`)}><span>{slot}</span><i /><b /></button>)}</div></section>
+        <section className="works-section content-scene" id="works" aria-labelledby="works-title">{!isMobile && <SpaceBackground mode="lab" />}<div className="geometry-layer work-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="lab-bench">{workSlots.map((slot, index) => <button className={`lab-artifact artifact-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Karya ${slot}`)}><span>{slot}</span><i /><b /></button>)}</div></section>
       </main>
 
       <footer className="class-footer" style={{ "--stars-image": `url(${STAR_IMAGE_URL})` } as CSSProperties}><img src={LOGO_URL} alt="Logo elight.universe" /><strong>XII-H || MANSA</strong><span>Part of: @man1nganjuk</span><a href="#top"><ArrowUpRight /></a></footer>
