@@ -64,3 +64,9 @@
 - [x] Menghapus layer dan transformasi yang menambah beban render ketika menggulir.
 - [x] Memastikan placeholder foto tetap tajam tanpa efek visual berat.
 - [x] Memvalidasi build, responsivitas, dan performa tampilan setelah perbaikan.
+
+## Data nama anggota
+
+- [x] Menyusun data 26 nama anggota sesuai urutan yang diberikan pengguna.
+- [x] Menampilkan nama pada kartu dan layer detail profil tanpa membuat data pribadi tambahan.
+- [x] Memvalidasi urutan serta keterbacaan nama pada desktop dan ponsel.
