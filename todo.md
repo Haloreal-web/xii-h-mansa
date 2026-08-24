@@ -1,5 +1,10 @@
 # Rencana Pekerjaan Website XII-H
 
+- [x] Menyusun ulang proyek sebagai aplikasi Next.js dengan React dan TypeScript.
+- [x] Memasang fondasi motion 3D yang ringan serta mendukung perangkat ponsel.
+- [x] Membangun scene Anggota, Galeri, dan Karya dari awal dengan bahasa motion yang berbeda.
+- [x] Memastikan hero tetap menjadi referensi visual yang dipertahankan.
+- [x] Memvalidasi build, performa, dan responsivitas Next.js sebelum preview dibagikan.
 - [x] Mengubah kartu wali kelas menjadi frame foto persegi panjang dengan area gambar utama.
 - [x] Memindahkan background video/gelap Galeri ke scene Anggota.
 - [x] Mengganti Galeri dengan background Anggota yang lebih ringan.
