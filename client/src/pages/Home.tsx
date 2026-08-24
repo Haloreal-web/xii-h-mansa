@@ -8,6 +8,7 @@ import "./ClassOrbitRefinement.css";
 const LOGO_URL = "/manus-storage/xii-h-elight-universe-logo_f5d5207f.png";
 const HERO_IMAGE_URL = "/manus-storage/xii-h-hero-cosmos_df2286c5.jpg";
 const STAR_IMAGE_URL = "/manus-storage/xii-h-star-field_6b5f3b20.jpg";
+const GALLERY_VIDEO_URL = "/manus-storage/xii-h-galeri-background_b2c8a308.mp4";
 
 const members = Array.from({ length: 26 }, (_, index) => String(index + 1).padStart(2, "0"));
 const gallerySlots = ["01", "02", "03", "04", "05"];
@@ -219,7 +220,7 @@ export default function Home() {
 
         <section className="members-section content-scene" id="members" aria-labelledby="members-title"><SpaceBackground /><div className="geometry-layer member-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="members-title">XII-H</h2></div><div className="teacher-card"><span className="teacher-card__label">WALI KELAS</span><div className="teacher-card__portrait">W</div><button type="button" onClick={() => setSelectedCard("Wali Kelas")} aria-label="Buka kartu wali kelas"><ArrowUpRight /></button></div><div className="member-deck" aria-label="Kartu anggota kelas">{members.map((number, index) => <button className={`member-card card-${index % 4}`} key={number} type="button" onClick={() => setSelectedCard(`Anggota ${number}`)}><span>{number}</span><i /><b>XII-H</b></button>)}</div></section>
 
-        <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><SpaceBackground mode="gallery" /><div className="geometry-layer gallery-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-void">{gallerySlots.map((slot, index) => <button className={`gallery-shard shard-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>{slot}</span><i /></button>)}</div></section>
+        <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><video className="gallery-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true"><source src={GALLERY_VIDEO_URL} type="video/mp4" /></video><SpaceBackground mode="gallery" /><div className="geometry-layer gallery-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-void">{gallerySlots.map((slot, index) => <button className={`gallery-shard shard-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>{slot}</span><i /></button>)}</div></section>
 
         <section className="works-section content-scene" id="works" aria-labelledby="works-title"><SpaceBackground mode="lab" /><div className="geometry-layer work-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="lab-bench">{workSlots.map((slot, index) => <button className={`lab-artifact artifact-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Karya ${slot}`)}><span>{slot}</span><i /><b /></button>)}</div></section>
       </main>

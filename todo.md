@@ -1,5 +1,9 @@
 # Rencana Pekerjaan Website XII-H
 
+- [x] Menyalin dan mendaftarkan video pengguna sebagai aset Galeri.
+- [x] Memasang video sebagai background dengan autoplay, muted, loop, dan playsinline.
+- [x] Menambahkan overlay kontras agar frame Galeri tetap terbaca di atas video.
+- [x] Memvalidasi video background pada desktop dan ponsel.
 - [x] Mengubah kartu wali kelas menjadi kartu kotak yang siap diisi foto dan nama.
 - [x] Memastikan grid anggota tiga per baris benar-benar terbaca pada ponsel tanpa potongan.
 - [x] Membangun ulang Galeri sebagai scene foto yang tidak menggunakan kartu anggota atau frame lama.
