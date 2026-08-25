@@ -1,0 +1,64 @@
+/* XII-H motion language: editorial scenes reveal in sequence; parallax uses a tiny RAF-driven transform budget rather than heavy scroll effects. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-item,
+  .member-card,
+  .gallery-shard,
+  .lab-artifact {
+    opacity: 0;
+    translate: 0 28px;
+    transition:
+      opacity 560ms cubic-bezier(.23, 1, .32, 1),
+      translate 560ms cubic-bezier(.23, 1, .32, 1);
+  }
+
+  .content-scene.is-visible .reveal-item,
+  .content-scene.is-visible .member-card,
+  .content-scene.is-visible .gallery-shard,
+  .content-scene.is-visible .lab-artifact {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  .content-scene.is-visible .teacher-panel { transition-delay: 90ms; }
+  .member-card,
+  .gallery-shard,
+  .lab-artifact { transition-delay: var(--reveal-delay, 0ms); }
+
+  .scroll-parallax {
+    --parallax-shift: 0px;
+    will-change: transform;
+  }
+
+  .hero-halo.scroll-parallax {
+    transform: translateY(calc(-50% + var(--parallax-shift))) !important;
+  }
+
+  .hero-emblem-wrap.scroll-parallax {
+    transform: translateY(calc(-48% + var(--parallax-shift))) perspective(1300px) rotateX(calc(var(--pointer-y) * -8deg)) rotateY(calc(var(--pointer-x) * 11deg));
+  }
+
+  .geometry-layer.scroll-parallax {
+    transform: translate3d(0, var(--parallax-shift), 0);
+  }
+}
+
+@media (max-width: 620px) and (prefers-reduced-motion: no-preference) {
+  .reveal-item,
+  .member-card,
+  .gallery-shard,
+  .lab-artifact { translate: 0 16px; }
+
+  .member-card { transition-duration: 420ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item,
+  .member-card,
+  .gallery-shard,
+  .lab-artifact {
+    opacity: 1 !important;
+    translate: 0 !important;
+    transition: none !important;
+  }
+}

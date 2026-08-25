@@ -79,3 +79,11 @@
 - [x] Menautkan repositori ke Vercel lalu membuat deployment produksi.
 - [x] Memperbaiki konfigurasi build Vercel agar menayangkan hasil Vite, bukan berkas server.
 - [x] Memverifikasi URL publik dan mendokumentasikan alur deploy ulang otomatis.
+
+## Reveal dan parallax scroll
+
+- [x] Meninjau struktur scene dan efek scroll yang ada untuk menghindari animasi berbasis scroll event berat.
+- [x] Menambahkan kemunculan scene serta elemen konten bertahap saat memasuki viewport.
+- [x] Menerapkan parallax ringan berbasis transform pada elemen dekoratif dan frame.
+- [x] Mengurangi atau mematikan gerakan non-esensial pada ponsel serta mode reduced motion.
+- [x] Memvalidasi kelancaran dan urutan animasi pada desktop maupun ponsel.

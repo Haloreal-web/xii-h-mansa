@@ -6,6 +6,7 @@ import { useIsMobile } from "@/hooks/useMobile";
 import "./ClassSite.css";
 import "./ClassOrbitRefinement.css";
 import "./MemberMobileRefinement.css";
+import "./ScrollMotionRefinement.css";
 
 const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/EbPOUTAmeByuebMD.png";
 const HERO_IMAGE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/RHLjEOgeXWoVkaAV.jpg";
@@ -215,6 +216,37 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const layers = Array.from(document.querySelectorAll<HTMLElement>("[data-parallax]"));
+    if (!layers.length) return;
+
+    let frame = 0;
+    const updateParallax = () => {
+      const viewportCenter = window.innerHeight / 2;
+      const limit = isMobile ? 12 : 34;
+      layers.forEach((layer) => {
+        const rect = layer.getBoundingClientRect();
+        const distance = Math.max(-1, Math.min(1, (rect.top + rect.height / 2 - viewportCenter) / window.innerHeight));
+        const speed = Number(layer.dataset.parallax ?? "0.5");
+        layer.style.setProperty("--parallax-shift", `${Math.round(distance * speed * limit)}px`);
+      });
+      frame = 0;
+    };
+    const requestUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateParallax);
+    };
+
+    updateParallax();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+    };
+  }, [isMobile]);
+
+  useEffect(() => {
     const video = membersVideoRef.current;
     const membersScene = document.querySelector<HTMLElement>("#members");
     if (!video || !membersScene) return;
@@ -238,17 +270,17 @@ export default function Home() {
 
       <main>
         <section className="hero-class" id="top" aria-labelledby="hero-title">
-          <div className="hero-halo" aria-hidden="true"><i /><i /><i /></div>
+          <div className="hero-halo scroll-parallax" data-parallax="0.72" aria-hidden="true"><i /><i /><i /></div>
           <div className="hero-copy"><p className="eyebrow"><OrbitMark /> elight.universe presents</p><h1 id="hero-title">XII-H <em>||</em> MANSA</h1><p className="hero-tagline">Lebih baik, dalam kebersamaan.</p><p className="hero-note">A digital yearbook-in-progress for the stories, people, and work that shape our final school chapter.</p><div className="hero-actions"><a className="button-gold" href="#members">Explore the class <ArrowUpRight /></a><span>Part of: <b>@man1nganjuk</b></span></div></div>
-          <div className="hero-emblem-wrap" aria-hidden="true"><div className="hero-emblem-shadow" /><div className="hero-emblem"><span className="emblem-ring ring-one" /><span className="emblem-ring ring-two" /><span className="emblem-disk"><img src={LOGO_URL} alt="" /></span><span className="emblem-star one">✦</span><span className="emblem-star two">✦</span><span className="emblem-star three">✦</span></div></div>
+          <div className="hero-emblem-wrap scroll-parallax" data-parallax="0.42" aria-hidden="true"><div className="hero-emblem-shadow" /><div className="hero-emblem"><span className="emblem-ring ring-one" /><span className="emblem-ring ring-two" /><span className="emblem-disk"><img src={LOGO_URL} alt="" /></span><span className="emblem-star one">✦</span><span className="emblem-star two">✦</span><span className="emblem-star three">✦</span></div></div>
           <a className="scroll-cue" href="#members"><span>Scroll to meet the class</span><i /></a>
         </section>
 
-        <section className="members-section content-scene" id="members" aria-labelledby="members-title"><video ref={membersVideoRef} className="members-video" muted loop playsInline preload="none" aria-hidden="true"><source src={GALLERY_VIDEO_URL} type="video/mp4" /></video>{!isMobile && <SpaceBackground mode="gallery" />}<div className="geometry-layer member-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="members-title">XII-H</h2></div><div className="teacher-panel"><div className="teacher-photo-frame" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h5l1.3-1.7h3.4L15 5.5h5v13H4v-13Z" stroke="currentColor" strokeWidth="1.2"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" strokeWidth="1.2"/></svg></div><span className="teacher-panel__label">WALI KELAS</span><button type="button" onClick={() => setSelectedCard("Wali Kelas")} aria-label="Buka kartu wali kelas"><ArrowUpRight /></button></div><div className="member-deck" aria-label="Kartu anggota kelas">{members.map((name, index) => <button className={`member-card card-${index % 4}`} key={name} type="button" onClick={() => setSelectedCard(name)} aria-label={`Buka profil ${name}`}><span>{String(index + 1).padStart(2, "0")}</span><i /><b>{name}</b></button>)}</div></section>
+        <section className="members-section content-scene" id="members" aria-labelledby="members-title"><video ref={membersVideoRef} className="members-video" muted loop playsInline preload="none" aria-hidden="true"><source src={GALLERY_VIDEO_URL} type="video/mp4" /></video>{!isMobile && <SpaceBackground mode="gallery" />}<div className="geometry-layer member-geometry scroll-parallax" data-parallax="0.62" aria-hidden="true"><i /><i /><i /></div><div className="scene-title reveal-item"><OrbitMark /><h2 id="members-title">XII-H</h2></div><div className="teacher-panel reveal-item"><div className="teacher-photo-frame" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h5l1.3-1.7h3.4L15 5.5h5v13H4v-13Z" stroke="currentColor" strokeWidth="1.2"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" strokeWidth="1.2"/></svg></div><span className="teacher-panel__label">WALI KELAS</span><button type="button" onClick={() => setSelectedCard("Wali Kelas")} aria-label="Buka kartu wali kelas"><ArrowUpRight /></button></div><div className="member-deck" aria-label="Kartu anggota kelas">{members.map((name, index) => <button className={`member-card card-${index % 4}`} style={{ "--reveal-delay": `${index * 38}ms` } as CSSProperties} key={name} type="button" onClick={() => setSelectedCard(name)} aria-label={`Buka profil ${name}`}><span>{String(index + 1).padStart(2, "0")}</span><i /><b>{name}</b></button>)}</div></section>
 
-        <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><div className="geometry-layer gallery-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-void">{gallerySlots.map((slot, index) => <button className={`gallery-shard shard-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>{slot}</span><i /></button>)}</div></section>
+        <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><div className="geometry-layer gallery-geometry scroll-parallax" data-parallax="0.48" aria-hidden="true"><i /><i /><i /></div><div className="scene-title reveal-item"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-void">{gallerySlots.map((slot, index) => <button className={`gallery-shard shard-${index + 1}`} style={{ "--reveal-delay": `${index * 90}ms` } as CSSProperties} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>{slot}</span><i /></button>)}</div></section>
 
-        <section className="works-section content-scene" id="works" aria-labelledby="works-title">{!isMobile && <SpaceBackground mode="lab" />}<div className="geometry-layer work-geometry" aria-hidden="true"><i /><i /><i /></div><div className="scene-title"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="lab-bench">{workSlots.map((slot, index) => <button className={`lab-artifact artifact-${index + 1}`} key={slot} type="button" onClick={() => setSelectedCard(`Karya ${slot}`)}><span>{slot}</span><i /><b /></button>)}</div></section>
+        <section className="works-section content-scene" id="works" aria-labelledby="works-title">{!isMobile && <SpaceBackground mode="lab" />}<div className="geometry-layer work-geometry scroll-parallax" data-parallax="0.58" aria-hidden="true"><i /><i /><i /></div><div className="scene-title reveal-item"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="lab-bench">{workSlots.map((slot, index) => <button className={`lab-artifact artifact-${index + 1}`} style={{ "--reveal-delay": `${index * 110}ms` } as CSSProperties} key={slot} type="button" onClick={() => setSelectedCard(`Karya ${slot}`)}><span>{slot}</span><i /><b /></button>)}</div></section>
       </main>
 
       <footer className="class-footer" style={{ "--stars-image": `url(${STAR_IMAGE_URL})` } as CSSProperties}><img src={LOGO_URL} alt="Logo elight.universe" /><strong>XII-H || MANSA</strong><span>Part of: @man1nganjuk</span><a href="#top"><ArrowUpRight /></a></footer>
