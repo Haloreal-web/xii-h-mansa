@@ -100,3 +100,10 @@
 - [x] Mengganti frame statis dengan dua jalur foto yang bergerak ke arah berlawanan.
 - [x] Menyetel ukuran, kecepatan, dan reduced motion agar loop tetap ringan pada ponsel.
 - [x] Memvalidasi tampilan Galeri terbaru pada desktop serta ponsel.
+
+## Galeri marquee tiga jalur
+
+- [x] Menilai komposisi dua jalur yang masih terasa statis dan menyiapkan ritme tiga jalur.
+- [x] Menambahkan jalur foto ketiga dengan arah, tinggi, serta kecepatan berbeda.
+- [x] Menyempurnakan transisi loop, hover, dan performa agar terasa halus tanpa berat.
+- [x] Memvalidasi Galeri tiga jalur pada desktop dan ponsel.
