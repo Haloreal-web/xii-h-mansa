@@ -107,3 +107,10 @@
 - [x] Menambahkan jalur foto ketiga dengan arah, tinggi, serta kecepatan berbeda.
 - [x] Menyempurnakan transisi loop, hover, dan performa agar terasa halus tanpa berat.
 - [x] Memvalidasi Galeri tiga jalur pada desktop dan ponsel.
+
+## Galeri foto kelas asli
+
+- [x] Membuat crop terpisah dari setiap foto kelas sesuai rasio jalur Galeri tanpa memasukkan foto mentah penuh.
+- [x] Mengunggah hasil crop sebagai aset web yang ringan dan mengganti visual sementara.
+- [x] Menyetel object position foto agar wajah serta momen utama tetap terlihat pada desktop dan ponsel.
+- [x] Memvalidasi Galeri foto asli pada tiga jalur marquee.

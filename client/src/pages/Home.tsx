@@ -14,19 +14,19 @@ const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/
 const HERO_IMAGE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/RHLjEOgeXWoVkaAV.jpg";
 const STAR_IMAGE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/rwDsaUFsSFhFgbwN.jpg";
 const GALLERY_VIDEO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/UtoolUMejJkQqoor.mp4";
-const GALLERY_ARCHITECTURE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/GQqIjhrvxOFNbwWM.jpg";
-const GALLERY_WORKSHOP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/rdiobxngZJrkGWqx.jpg";
-const GALLERY_REFERENCE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/NDWGTaSScEwlCZHd.jpg";
+const GALLERY_CLASS_PORTRAIT_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/vuuEHExgXHDZXNgl.jpg";
+const GALLERY_CLASS_UNIFORM_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/uWsxVGIigZujCnhx.jpg";
+const GALLERY_BOYS_PORTRAIT_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/akgCftckBKqGvhHk.jpg";
+const GALLERY_BOYS_ACTION_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/bYlbMctcpwlFbHTN.jpg";
 
 const members = [
   "Adyan", "Fikram", "Any Ayu", "Dewa", "Dina", "Fatihah", "Fitri", "Galang", "Hengky", "Insa", "Jauharoh", "Lisa Bela", "Afif", "Akmal", "Al", "Habib", "Iqbal", "Kafaul", "Nazwa", "Putri Rosela", "Salsa", "Randy", "Ruben", "Silvi", "Surya", "Bila",
 ];
 const galleryItems = [
-  { code: "01", image: GALLERY_ARCHITECTURE_URL },
-  { code: "02", image: GALLERY_WORKSHOP_URL },
-  { code: "03", image: HERO_IMAGE_URL },
-  { code: "04", image: GALLERY_REFERENCE_URL },
-  { code: "05", image: STAR_IMAGE_URL },
+  { code: "01", image: GALLERY_CLASS_PORTRAIT_URL },
+  { code: "02", image: GALLERY_CLASS_UNIFORM_URL },
+  { code: "03", image: GALLERY_BOYS_PORTRAIT_URL },
+  { code: "04", image: GALLERY_BOYS_ACTION_URL },
 ];
 const galleryForward = [...galleryItems, ...galleryItems];
 const galleryBackward = [...galleryItems.slice(2), ...galleryItems.slice(0, 2), ...galleryItems.slice(2), ...galleryItems.slice(0, 2)];
