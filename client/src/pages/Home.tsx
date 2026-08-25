@@ -8,16 +8,28 @@ import "./ClassOrbitRefinement.css";
 import "./MemberMobileRefinement.css";
 import "./ScrollMotionRefinement.css";
 import "./WorkShowcaseRefinement.css";
+import "./GalleryMarqueeRefinement.css";
 
 const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/EbPOUTAmeByuebMD.png";
 const HERO_IMAGE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/RHLjEOgeXWoVkaAV.jpg";
 const STAR_IMAGE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/rwDsaUFsSFhFgbwN.jpg";
 const GALLERY_VIDEO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/UtoolUMejJkQqoor.mp4";
+const GALLERY_ARCHITECTURE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/GQqIjhrvxOFNbwWM.jpg";
+const GALLERY_WORKSHOP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/rdiobxngZJrkGWqx.jpg";
+const GALLERY_REFERENCE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/NDWGTaSScEwlCZHd.jpg";
 
 const members = [
   "Adyan", "Fikram", "Any Ayu", "Dewa", "Dina", "Fatihah", "Fitri", "Galang", "Hengky", "Insa", "Jauharoh", "Lisa Bela", "Afif", "Akmal", "Al", "Habib", "Iqbal", "Kafaul", "Nazwa", "Putri Rosela", "Salsa", "Randy", "Ruben", "Silvi", "Surya", "Bila",
 ];
-const gallerySlots = ["01", "02", "03", "04", "05"];
+const galleryItems = [
+  { code: "01", image: GALLERY_ARCHITECTURE_URL },
+  { code: "02", image: GALLERY_WORKSHOP_URL },
+  { code: "03", image: HERO_IMAGE_URL },
+  { code: "04", image: GALLERY_REFERENCE_URL },
+  { code: "05", image: STAR_IMAGE_URL },
+];
+const galleryForward = [...galleryItems, ...galleryItems];
+const galleryBackward = [...galleryItems.slice(2), ...galleryItems.slice(0, 2), ...galleryItems.slice(2), ...galleryItems.slice(0, 2)];
 const works = [
   {
     code: "01",
@@ -217,6 +229,7 @@ export default function Home() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add("is-visible");
+        entry.target.classList.toggle("is-in-view", entry.isIntersecting);
       });
     }, { threshold: 0.18 });
     scenes.forEach((scene) => observer.observe(scene));
@@ -286,7 +299,7 @@ export default function Home() {
 
         <section className="members-section content-scene" id="members" aria-labelledby="members-title"><video ref={membersVideoRef} className="members-video" muted loop playsInline preload="none" aria-hidden="true"><source src={GALLERY_VIDEO_URL} type="video/mp4" /></video>{!isMobile && <SpaceBackground mode="gallery" />}<div className="geometry-layer member-geometry scroll-parallax" data-parallax="0.62" aria-hidden="true"><i /><i /><i /></div><div className="scene-title reveal-item"><OrbitMark /><h2 id="members-title">XII-H</h2></div><div className="teacher-panel reveal-item"><div className="teacher-photo-frame" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h5l1.3-1.7h3.4L15 5.5h5v13H4v-13Z" stroke="currentColor" strokeWidth="1.2"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" strokeWidth="1.2"/></svg></div><span className="teacher-panel__label">WALI KELAS</span><button type="button" onClick={() => setSelectedCard("Wali Kelas")} aria-label="Buka kartu wali kelas"><ArrowUpRight /></button></div><div className="member-deck" aria-label="Kartu anggota kelas">{members.map((name, index) => <button className={`member-card card-${index % 4}`} style={{ "--reveal-delay": `${index * 38}ms` } as CSSProperties} key={name} type="button" onClick={() => setSelectedCard(name)} aria-label={`Buka profil ${name}`}><span>{String(index + 1).padStart(2, "0")}</span><i /><b>{name}</b></button>)}</div></section>
 
-        <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><div className="geometry-layer gallery-geometry scroll-parallax" data-parallax="0.48" aria-hidden="true"><i /><i /><i /></div><div className="scene-title reveal-item"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-void">{gallerySlots.map((slot, index) => <button className={`gallery-shard shard-${index + 1}`} style={{ "--reveal-delay": `${index * 90}ms` } as CSSProperties} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>{slot}</span><i /></button>)}</div></section>
+        <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><div className="geometry-layer gallery-geometry scroll-parallax" data-parallax="0.48" aria-hidden="true"><i /><i /><i /></div><div className="scene-title reveal-item"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-marquee" aria-label="Arus foto Galeri XII-H"><div className="gallery-marquee__row"><div className="gallery-marquee__track gallery-marquee__track--right">{galleryForward.map((item, index) => <button className="gallery-strip-card" style={{ "--reveal-delay": `${Math.min(index, 5) * 65}ms` } as CSSProperties} key={`forward-${index}`} type="button" onClick={() => setSelectedCard(`Foto ${item.code}`)} aria-label={`Buka foto ${item.code}`}><img src={item.image} alt="" loading="lazy" /><span>{item.code}</span></button>)}</div></div><div className="gallery-marquee__row"><div className="gallery-marquee__track gallery-marquee__track--left">{galleryBackward.map((item, index) => <button className="gallery-strip-card" style={{ "--reveal-delay": `${Math.min(index, 5) * 65 + 150}ms` } as CSSProperties} key={`backward-${index}`} type="button" onClick={() => setSelectedCard(`Foto ${item.code}`)} aria-label={`Buka foto ${item.code}`}><img src={item.image} alt="" loading="lazy" /><span>{item.code}</span></button>)}</div></div></div></section>
 
         <section className="works-section content-scene" id="works" aria-labelledby="works-title">{!isMobile && <SpaceBackground mode="lab" />}<div className="geometry-layer work-geometry scroll-parallax" data-parallax="0.58" aria-hidden="true"><i /><i /><i /></div><div className="scene-title reveal-item"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="lab-bench lab-bench--single">{works.map((work, index) => <a className={`lab-artifact work-link artifact-${index + 1}`} style={{ "--reveal-delay": `${index * 110}ms` } as CSSProperties} key={work.code} href={work.href} target="_blank" rel="noreferrer noopener" aria-label={`Buka halaman unduhan ${work.title}`}><span>{work.code}</span><strong>{work.title}</strong><em>{work.type}</em><i aria-hidden="true" /><b aria-hidden="true" /></a>)}</div></section>
       </main>

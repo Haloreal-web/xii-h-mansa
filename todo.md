@@ -93,3 +93,10 @@
 - [x] Memeriksa halaman unduhan APK TKA Wave Pro tanpa mengunduh atau menjalankan berkas.
 - [x] Menambahkan kartu karya TKA Wave Pro dengan tautan eksternal yang aman.
 - [x] Memvalidasi kartu dan tautan pada desktop maupun ponsel.
+
+## Galeri marquee dua arah
+
+- [x] Meninjau struktur Galeri aktif dan menyiapkan data foto yang dapat diulang untuk loop tanpa jeda.
+- [x] Mengganti frame statis dengan dua jalur foto yang bergerak ke arah berlawanan.
+- [x] Menyetel ukuran, kecepatan, dan reduced motion agar loop tetap ringan pada ponsel.
+- [x] Memvalidasi tampilan Galeri terbaru pada desktop serta ponsel.
