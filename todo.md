@@ -75,6 +75,7 @@
 
 - [x] Memeriksa koneksi GitHub dan Vercel serta menyiapkan konfigurasi deployment.
 - [x] Menyiapkan URL aset portabel agar logo, gambar, dan video dapat dimuat pada deployment Vercel.
-- [ ] Membuat repositori GitHub publik dan mengunggah source website terbaru.
+- [x] Membuat repositori GitHub publik dan mengunggah source website terbaru.
 - [ ] Menautkan repositori ke Vercel lalu membuat deployment produksi.
+- [ ] Memperbaiki konfigurasi build Vercel agar menayangkan hasil Vite, bukan berkas server.
 - [ ] Memverifikasi URL publik dan mendokumentasikan alur deploy ulang otomatis.
