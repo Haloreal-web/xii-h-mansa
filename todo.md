@@ -87,3 +87,9 @@
 - [x] Menerapkan parallax ringan berbasis transform pada elemen dekoratif dan frame.
 - [x] Mengurangi atau mematikan gerakan non-esensial pada ponsel serta mode reduced motion.
 - [x] Memvalidasi kelancaran dan urutan animasi pada desktop maupun ponsel.
+
+## Karya TKA Wave Pro
+
+- [x] Memeriksa halaman unduhan APK TKA Wave Pro tanpa mengunduh atau menjalankan berkas.
+- [x] Menambahkan kartu karya TKA Wave Pro dengan tautan eksternal yang aman.
+- [x] Memvalidasi kartu dan tautan pada desktop maupun ponsel.

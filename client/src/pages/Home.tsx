@@ -7,6 +7,7 @@ import "./ClassSite.css";
 import "./ClassOrbitRefinement.css";
 import "./MemberMobileRefinement.css";
 import "./ScrollMotionRefinement.css";
+import "./WorkShowcaseRefinement.css";
 
 const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/EbPOUTAmeByuebMD.png";
 const HERO_IMAGE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/RHLjEOgeXWoVkaAV.jpg";
@@ -17,7 +18,14 @@ const members = [
   "Adyan", "Fikram", "Any Ayu", "Dewa", "Dina", "Fatihah", "Fitri", "Galang", "Hengky", "Insa", "Jauharoh", "Lisa Bela", "Afif", "Akmal", "Al", "Habib", "Iqbal", "Kafaul", "Nazwa", "Putri Rosela", "Salsa", "Randy", "Ruben", "Silvi", "Surya", "Bila",
 ];
 const gallerySlots = ["01", "02", "03", "04", "05"];
-const workSlots = ["01", "02", "03"];
+const works = [
+  {
+    code: "01",
+    title: "TKA Wave Pro",
+    type: "APK · 8.49 MB",
+    href: "https://www.mediafire.com/file/oqqo2p8dx5e3a7r/TKA-Wave-Pro-Tier.apk/file",
+  },
+];
 
 type SpaceMode = "navy" | "gallery" | "lab";
 
@@ -280,7 +288,7 @@ export default function Home() {
 
         <section className="gallery-section content-scene" id="gallery" aria-labelledby="gallery-title"><div className="geometry-layer gallery-geometry scroll-parallax" data-parallax="0.48" aria-hidden="true"><i /><i /><i /></div><div className="scene-title reveal-item"><OrbitMark /><h2 id="gallery-title">Galeri</h2></div><div className="gallery-void">{gallerySlots.map((slot, index) => <button className={`gallery-shard shard-${index + 1}`} style={{ "--reveal-delay": `${index * 90}ms` } as CSSProperties} key={slot} type="button" onClick={() => setSelectedCard(`Foto ${slot}`)}><span>{slot}</span><i /></button>)}</div></section>
 
-        <section className="works-section content-scene" id="works" aria-labelledby="works-title">{!isMobile && <SpaceBackground mode="lab" />}<div className="geometry-layer work-geometry scroll-parallax" data-parallax="0.58" aria-hidden="true"><i /><i /><i /></div><div className="scene-title reveal-item"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="lab-bench">{workSlots.map((slot, index) => <button className={`lab-artifact artifact-${index + 1}`} style={{ "--reveal-delay": `${index * 110}ms` } as CSSProperties} key={slot} type="button" onClick={() => setSelectedCard(`Karya ${slot}`)}><span>{slot}</span><i /><b /></button>)}</div></section>
+        <section className="works-section content-scene" id="works" aria-labelledby="works-title">{!isMobile && <SpaceBackground mode="lab" />}<div className="geometry-layer work-geometry scroll-parallax" data-parallax="0.58" aria-hidden="true"><i /><i /><i /></div><div className="scene-title reveal-item"><OrbitMark /><h2 id="works-title">Karya</h2></div><div className="lab-bench lab-bench--single">{works.map((work, index) => <a className={`lab-artifact work-link artifact-${index + 1}`} style={{ "--reveal-delay": `${index * 110}ms` } as CSSProperties} key={work.code} href={work.href} target="_blank" rel="noreferrer noopener" aria-label={`Buka halaman unduhan ${work.title}`}><span>{work.code}</span><strong>{work.title}</strong><em>{work.type}</em><i aria-hidden="true" /><b aria-hidden="true" /></a>)}</div></section>
       </main>
 
       <footer className="class-footer" style={{ "--stars-image": `url(${STAR_IMAGE_URL})` } as CSSProperties}><img src={LOGO_URL} alt="Logo elight.universe" /><strong>XII-H || MANSA</strong><span>Part of: @man1nganjuk</span><a href="#top"><ArrowUpRight /></a></footer>

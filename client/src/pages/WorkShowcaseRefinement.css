@@ -1,0 +1,59 @@
+/* XII-H work showcase language: a single real project gets a distinct blueprint artifact, not a filler placeholder card. */
+
+#works .lab-bench--single {
+  justify-content: center !important;
+}
+
+#works .lab-bench--single .work-link {
+  width: 280px !important;
+  height: 320px !important;
+  box-shadow: 24px 31px 0 #0d2a57 !important;
+}
+
+#works .work-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#works .work-link strong,
+#works .work-link em {
+  position: absolute;
+  z-index: 3;
+  left: 22px;
+  max-width: calc(100% - 44px);
+  transform: translateZ(42px);
+}
+
+#works .work-link strong {
+  bottom: 66px;
+  font-family: "DM Serif Display", serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: .95;
+}
+
+#works .work-link em {
+  bottom: 42px;
+  color: rgba(13, 42, 87, .72);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#works .work-link:hover strong,
+#works .work-link:focus-visible strong { color: #061b3c; }
+
+#works .work-link:focus-visible {
+  outline: 3px solid #d6ae57;
+  outline-offset: 8px;
+}
+
+@media (max-width: 620px) {
+  #works .lab-bench--single { justify-content: center !important; }
+  #works .lab-bench--single .work-link { width: 228px !important; height: 248px !important; box-shadow: 12px 17px 0 #0d2a57 !important; }
+  #works .work-link strong { left: 14px; bottom: 58px; font-size: 20px; }
+  #works .work-link em { left: 14px; bottom: 38px; font-size: 8px; }
+}
