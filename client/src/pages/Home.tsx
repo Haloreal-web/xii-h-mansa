@@ -7,10 +7,10 @@ import "./ClassSite.css";
 import "./ClassOrbitRefinement.css";
 import "./MemberMobileRefinement.css";
 
-const LOGO_URL = "/manus-storage/xii-h-elight-universe-logo_f5d5207f.png";
-const HERO_IMAGE_URL = "/manus-storage/xii-h-hero-cosmos_df2286c5.jpg";
-const STAR_IMAGE_URL = "/manus-storage/xii-h-star-field_6b5f3b20.jpg";
-const GALLERY_VIDEO_URL = "/manus-storage/xii-h-galeri-background_b2c8a308.mp4";
+const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/EbPOUTAmeByuebMD.png";
+const HERO_IMAGE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/RHLjEOgeXWoVkaAV.jpg";
+const STAR_IMAGE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/rwDsaUFsSFhFgbwN.jpg";
+const GALLERY_VIDEO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/UtoolUMejJkQqoor.mp4";
 
 const members = [
   "Adyan", "Fikram", "Any Ayu", "Dewa", "Dina", "Fatihah", "Fitri", "Galang", "Hengky", "Insa", "Jauharoh", "Lisa Bela", "Afif", "Akmal", "Al", "Habib", "Iqbal", "Kafaul", "Nazwa", "Putri Rosela", "Salsa", "Randy", "Ruben", "Silvi", "Surya", "Bila",

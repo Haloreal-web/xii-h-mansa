@@ -70,3 +70,11 @@
 - [x] Menyusun data 26 nama anggota sesuai urutan yang diberikan pengguna.
 - [x] Menampilkan nama pada kartu dan layer detail profil tanpa membuat data pribadi tambahan.
 - [x] Memvalidasi urutan serta keterbacaan nama pada desktop dan ponsel.
+
+## Publikasi GitHub dan Vercel
+
+- [x] Memeriksa koneksi GitHub dan Vercel serta menyiapkan konfigurasi deployment.
+- [x] Menyiapkan URL aset portabel agar logo, gambar, dan video dapat dimuat pada deployment Vercel.
+- [ ] Membuat repositori GitHub publik dan mengunggah source website terbaru.
+- [ ] Menautkan repositori ke Vercel lalu membuat deployment produksi.
+- [ ] Memverifikasi URL publik dan mendokumentasikan alur deploy ulang otomatis.
