@@ -141,3 +141,15 @@
 - [x] Mengubah standar foto kartu anggota berfoto dari 4:3 menjadi persegi 6:6.
 - [x] Menghapus garis dekoratif yang menutupi area foto pada kartu berfoto.
 - [x] Memvalidasi kejelasan wajah dan grid anggota pada desktop serta ponsel.
+
+## Foto anggota tanpa overlay
+
+- [x] Mengidentifikasi seluruh pseudo-element dan layer dekoratif yang melintang pada kartu foto Anggota.
+- [x] Menghapus garis kuning dan putih dari foto kartu Anggota tanpa mengubah foto, nomor, atau nama.
+- [x] Memvalidasi tampilan foto polos pada desktop dan ponsel.
+
+## Ikon placeholder pada foto anggota
+
+- [x] Menghapus ikon avatar putih dari area tengah setiap kartu yang sudah memiliki foto.
+- [x] Memastikan placeholder avatar tetap muncul pada kartu anggota yang belum memiliki foto.
+- [x] Memvalidasi foto anggota bersih tanpa ikon di desktop dan ponsel.

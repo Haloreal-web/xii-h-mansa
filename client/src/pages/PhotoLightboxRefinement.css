@@ -24,6 +24,12 @@
   background-size: cover;
 }
 
+#members .member-card.has-photo .member-photo::before,
+#members .member-card.has-photo .member-photo::after {
+  display: none !important;
+  content: none !important;
+}
+
 .profile-member-photo {
   display: block;
   width: min(100%, 310px);
