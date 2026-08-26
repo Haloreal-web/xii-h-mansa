@@ -114,3 +114,10 @@
 - [x] Mengunggah hasil crop sebagai aset web yang ringan dan mengganti visual sementara.
 - [x] Menyetel object position foto agar wajah serta momen utama tetap terlihat pada desktop dan ponsel.
 - [x] Memvalidasi Galeri foto asli pada tiga jalur marquee.
+
+## Koleksi Galeri diperbesar
+
+- [x] Membuat crop 3:2 dari dua belas foto kelas agar sesuai dengan frame besar Galeri.
+- [x] Mengunggah foto hasil crop dan menyusun koleksi penuh ke tiga jalur marquee.
+- [x] Memperbesar tinggi, lebar, dan ruang Galeri tanpa membuat animasi lebih berat.
+- [x] Memvalidasi komposisi, crop subjek, dan performa Galeri pada desktop serta ponsel.

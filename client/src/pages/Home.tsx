@@ -14,19 +14,23 @@ const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/
 const HERO_IMAGE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/RHLjEOgeXWoVkaAV.jpg";
 const STAR_IMAGE_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/rwDsaUFsSFhFgbwN.jpg";
 const GALLERY_VIDEO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/UtoolUMejJkQqoor.mp4";
-const GALLERY_CLASS_PORTRAIT_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/vuuEHExgXHDZXNgl.jpg";
-const GALLERY_CLASS_UNIFORM_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/uWsxVGIigZujCnhx.jpg";
-const GALLERY_BOYS_PORTRAIT_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/akgCftckBKqGvhHk.jpg";
-const GALLERY_BOYS_ACTION_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/bYlbMctcpwlFbHTN.jpg";
 
 const members = [
   "Adyan", "Fikram", "Any Ayu", "Dewa", "Dina", "Fatihah", "Fitri", "Galang", "Hengky", "Insa", "Jauharoh", "Lisa Bela", "Afif", "Akmal", "Al", "Habib", "Iqbal", "Kafaul", "Nazwa", "Putri Rosela", "Salsa", "Randy", "Ruben", "Silvi", "Surya", "Bila",
 ];
 const galleryItems = [
-  { code: "01", image: GALLERY_CLASS_PORTRAIT_URL },
-  { code: "02", image: GALLERY_CLASS_UNIFORM_URL },
-  { code: "03", image: GALLERY_BOYS_PORTRAIT_URL },
-  { code: "04", image: GALLERY_BOYS_ACTION_URL },
+  { code: "01", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/xCSoOdQhtVdRrKwa.jpg" },
+  { code: "02", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/erYcqdcfHCVAfMAG.jpg" },
+  { code: "03", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/kcUrWdgXWNLqaCmu.jpg" },
+  { code: "04", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/lcFQWrCgdQecgSdj.jpg" },
+  { code: "05", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/thUndgRiJfjPGqpB.jpg" },
+  { code: "06", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/NAdcLLDiADJCKiJI.jpg" },
+  { code: "07", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/VbXxAxZjVprGkoDR.jpg" },
+  { code: "08", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/KcNOlEdFEUnAKInc.jpg" },
+  { code: "09", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/TVtGEWjNwsbKLPoU.jpg" },
+  { code: "10", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/EopVMNWOmnheDROl.jpg" },
+  { code: "11", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/XflwBrmrbTTvMdyF.jpg" },
+  { code: "12", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/gLhyETRlMBuiPwvr.jpg" },
 ];
 const galleryForward = [...galleryItems, ...galleryItems];
 const galleryBackward = [...galleryItems.slice(2), ...galleryItems.slice(0, 2), ...galleryItems.slice(2), ...galleryItems.slice(0, 2)];
