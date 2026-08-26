@@ -121,3 +121,11 @@
 - [x] Mengunggah foto hasil crop dan menyusun koleksi penuh ke tiga jalur marquee.
 - [x] Memperbesar tinggi, lebar, dan ruang Galeri tanpa membuat animasi lebih berat.
 - [x] Memvalidasi komposisi, crop subjek, dan performa Galeri pada desktop serta ponsel.
+
+## Foto Al dan lightbox Galeri
+
+- [x] Membuat crop foto Al untuk kartu anggota dan tampilan profil besar.
+- [x] Memasang foto Al pada kartu serta profilnya tanpa mengubah data anggota lain.
+- [x] Mengubah klik foto Galeri menjadi lightbox foto besar dengan area caption opsional di bawahnya.
+- [x] Mencerahkan latar dan permukaan lightbox agar tidak terlalu gelap.
+- [x] Memvalidasi kartu Al dan lightbox Galeri pada desktop serta ponsel.

@@ -1,0 +1,106 @@
+/* XII-H photo language: real portraits and gallery memories must be bright, prominent, and never hidden behind a heavy dark treatment. */
+
+#members .member-card.has-photo {
+  min-height: 170px;
+}
+
+#members .member-card .member-photo {
+  width: 100%;
+  height: 82px;
+  align-self:stretch;
+  border-radius: 0;
+  border: 1px solid #0d2a57;
+  box-shadow: none;
+  background-position: center 24%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile-member-photo {
+  display: block;
+  width: min(100%, 310px);
+  max-height: 52vh;
+  margin-top: 24px;
+  border: 1px solid rgba(245, 239, 222, .82);
+  object-fit: cover;
+  object-position: center 24%;
+  box-shadow: 10px 12px 0 rgba(214, 174, 87, .44);
+}
+
+.gallery-lightbox {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 56px);
+  overflow: auto;
+  background: rgba(220, 231, 239, .91);
+  backdrop-filter: blur(12px);
+}
+
+.gallery-lightbox__panel {
+  position: relative;
+  width: min(980px, 100%);
+  margin: auto;
+  padding: clamp(10px, 1.6vw, 18px);
+  border: 1px solid rgba(11, 42, 87, .6);
+  background: #f6f0df;
+  box-shadow: 18px 22px 0 rgba(11, 42, 87, .32);
+}
+
+.gallery-lightbox__panel img {
+  display: block;
+  width: 100%;
+  max-height: min(72vh, 760px);
+  object-fit: contain;
+  background: #d6e3e8;
+}
+
+.gallery-lightbox__panel figcaption {
+  display: grid;
+  gap: 8px;
+  padding: 16px 8px 3px;
+  color: #123466;
+}
+
+.gallery-lightbox__panel figcaption strong {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(1.55rem, 3vw, 2.3rem);
+  font-weight: 400;
+}
+
+.gallery-lightbox__panel figcaption span {
+  color: rgba(11, 42, 87, .72);
+  font-size: .93rem;
+  line-height: 1.55;
+}
+
+.gallery-lightbox__close {
+  position: absolute;
+  z-index: 2;
+  top: clamp(17px, 3vw, 28px);
+  right: clamp(17px, 3vw, 28px);
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(246, 240, 223, .9);
+  border-radius: 50%;
+  background: rgba(11, 42, 87, .78);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.gallery-lightbox__close:hover { background: #d6ae57; color: #10264b; }
+
+@media (max-width: 620px) {
+  #members .member-card.has-photo { min-height: 144px; }
+  #members .member-card .member-photo { height: 64px; }
+  .profile-member-photo { max-height: 48vh; }
+  .gallery-lightbox { padding: 16px; }
+  .gallery-lightbox__panel { padding: 8px; box-shadow: 9px 12px 0 rgba(11, 42, 87, .3); }
+  .gallery-lightbox__panel img { max-height: 68vh; }
+  .gallery-lightbox__panel figcaption { padding: 13px 5px 4px; }
+}
