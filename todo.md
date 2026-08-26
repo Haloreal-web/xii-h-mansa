@@ -129,3 +129,9 @@
 - [x] Mengubah klik foto Galeri menjadi lightbox foto besar dengan area caption opsional di bawahnya.
 - [x] Mencerahkan latar dan permukaan lightbox agar tidak terlalu gelap.
 - [x] Memvalidasi kartu Al dan lightbox Galeri pada desktop serta ponsel.
+
+## Standar foto anggota 4:3
+
+- [x] Menetapkan frame foto 4:3 sebagai aturan global untuk semua kartu anggota yang memiliki foto.
+- [x] Menyesuaikan tinggi kartu dan posisi wajah agar foto tampak jelas sebelum kartu dibuka.
+- [x] Memvalidasi grid kartu berfoto pada desktop serta ponsel.
