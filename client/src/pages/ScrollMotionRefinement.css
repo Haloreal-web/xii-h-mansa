@@ -41,6 +41,22 @@
   .geometry-layer.scroll-parallax {
     transform: translate3d(0, var(--parallax-shift), 0);
   }
+
+  #members .member-card.member-scroll-reveal {
+    opacity: 0;
+    translate: 0 calc(30px + var(--parallax-shift, 0px));
+    will-change: opacity, translate;
+    transition:
+      opacity 580ms cubic-bezier(.23, 1, .32, 1) var(--member-reveal-delay, 0ms),
+      translate 680ms cubic-bezier(.23, 1, .32, 1) var(--member-reveal-delay, 0ms),
+      transform 260ms cubic-bezier(.23, 1, .32, 1),
+      box-shadow 260ms cubic-bezier(.23, 1, .32, 1);
+  }
+
+  #members .member-card.member-scroll-reveal.is-revealed {
+    opacity: 1;
+    translate: 0 var(--parallax-shift, 0px);
+  }
 }
 
 @media (max-width: 620px) and (prefers-reduced-motion: no-preference) {
@@ -50,6 +66,15 @@
   .lab-artifact { translate: 0 16px; }
 
   .member-card { transition-duration: 420ms; }
+
+  #members .member-card.member-scroll-reveal {
+    translate: 0 calc(18px + var(--parallax-shift, 0px));
+    transition-duration: 460ms, 520ms, 220ms, 220ms;
+  }
+
+  #members .member-card.member-scroll-reveal.is-revealed {
+    translate: 0 var(--parallax-shift, 0px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -57,6 +82,12 @@
   .member-card,
   .gallery-shard,
   .lab-artifact {
+    opacity: 1 !important;
+    translate: 0 !important;
+    transition: none !important;
+  }
+
+  #members .member-card.member-scroll-reveal {
     opacity: 1 !important;
     translate: 0 !important;
     transition: none !important;

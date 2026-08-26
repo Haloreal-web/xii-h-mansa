@@ -153,3 +153,11 @@
 - [x] Menghapus ikon avatar putih dari area tengah setiap kartu yang sudah memiliki foto.
 - [x] Memastikan placeholder avatar tetap muncul pada kartu anggota yang belum memiliki foto.
 - [x] Memvalidasi foto anggota bersih tanpa ikon di desktop dan ponsel.
+
+## Reveal dan parallax kartu Anggota
+
+- [x] Meninjau pola reveal serta parallax yang sudah ada agar tidak bertabrakan.
+- [x] Membuat kartu Anggota muncul satu per satu saat memasuki viewport dengan stagger yang ringan.
+- [x] Menambahkan parallax kecil pada kedalaman kartu dan dekorasi section Anggota.
+- [x] Menyesuaikan reduced motion serta ponsel supaya animasi tetap halus.
+- [x] Memvalidasi animasi pada desktop dan ponsel.
