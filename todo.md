@@ -135,3 +135,9 @@
 - [x] Menetapkan frame foto 4:3 sebagai aturan global untuk semua kartu anggota yang memiliki foto.
 - [x] Menyesuaikan tinggi kartu dan posisi wajah agar foto tampak jelas sebelum kartu dibuka.
 - [x] Memvalidasi grid kartu berfoto pada desktop serta ponsel.
+
+## Frame foto anggota 6:6
+
+- [x] Mengubah standar foto kartu anggota berfoto dari 4:3 menjadi persegi 6:6.
+- [x] Menghapus garis dekoratif yang menutupi area foto pada kartu berfoto.
+- [x] Memvalidasi kejelasan wajah dan grid anggota pada desktop serta ponsel.

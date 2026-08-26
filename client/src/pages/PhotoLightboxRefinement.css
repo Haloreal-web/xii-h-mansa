@@ -1,22 +1,25 @@
 /* XII-H photo language: real portraits and gallery memories must be bright, prominent, and never hidden behind a heavy dark treatment. */
 
 #members .member-card.has-photo {
-  min-height: 198px;
+  min-height: 0;
   justify-content: flex-start;
   gap: 8px;
   padding: 10px;
+  background: #edf2ef;
 }
+
+#members .member-card.has-photo::before { display: none; }
 
 #members .member-card .member-photo {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1;
   flex: 0 0 auto;
   align-self:stretch;
   border-radius: 0;
   border: 1px solid #0d2a57;
   box-shadow: none;
-  background-position: center 22%;
+  background-position: center 20%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -101,8 +104,8 @@
 .gallery-lightbox__close:hover { background: #d6ae57; color: #10264b; }
 
 @media (max-width: 620px) {
-  #members .member-card.has-photo { min-height: 184px; gap: 7px; padding: 8px; }
-  #members .member-card .member-photo { height: auto; aspect-ratio: 4 / 3; }
+  #members .member-card.has-photo { min-height: 0; gap: 7px; padding: 8px; }
+  #members .member-card .member-photo { height: auto; aspect-ratio: 1; }
   .profile-member-photo { max-height: 48vh; }
   .gallery-lightbox { padding: 16px; }
   .gallery-lightbox__panel { padding: 8px; box-shadow: 9px 12px 0 rgba(11, 42, 87, .3); }
