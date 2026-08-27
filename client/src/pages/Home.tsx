@@ -36,6 +36,13 @@ const galleryItems: GalleryItem[] = [
   { code: "10", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/EopVMNWOmnheDROl.jpg" },
   { code: "11", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/XflwBrmrbTTvMdyF.jpg" },
   { code: "12", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/gLhyETRlMBuiPwvr.jpg" },
+  { code: "13", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/DzqhYrVxdMpRZBkD.jpg" },
+  { code: "14", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/orcocKdxDUGHKmIV.jpg" },
+  { code: "15", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/AiZjImVPTjYkTehl.jpg" },
+  { code: "16", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/DzcwZKPuFarxVmvg.jpg" },
+  { code: "17", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/bTqJTgWzLkaAcVbD.jpg" },
+  { code: "18", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/OUemapGEvHAPVVmF.jpg" },
+  { code: "19", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663649873365/QTuFZVFymPbntYcH.jpg" },
 ];
 const galleryForward = [...galleryItems, ...galleryItems];
 const galleryBackward = [...galleryItems.slice(2), ...galleryItems.slice(0, 2), ...galleryItems.slice(2), ...galleryItems.slice(0, 2)];

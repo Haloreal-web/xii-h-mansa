@@ -161,3 +161,11 @@
 - [x] Menambahkan parallax kecil pada kedalaman kartu dan dekorasi section Anggota.
 - [x] Menyesuaikan reduced motion serta ponsel supaya animasi tetap halus.
 - [x] Memvalidasi animasi pada desktop dan ponsel.
+
+## Tambahan foto Galeri terbaru
+
+- [x] Menyiapkan tujuh foto kelas baru untuk jalur Galeri.
+- [x] Membuat crop 3:2 yang menjaga subjek utama tetap terlihat.
+- [x] Mengunggah hasil crop sebagai aset web ringan.
+- [x] Menambahkan foto baru pada tiga jalur marquee dan lightbox Galeri.
+- [x] Memvalidasi crop, lightbox, serta performa Galeri pada desktop dan ponsel.
